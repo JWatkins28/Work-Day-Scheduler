@@ -25,7 +25,7 @@ THEN the saved events persist
 ---
 
 ## **Preview**
-![Website Preview](./assets/screenshot.PNG)
+![Website Preview](./Assets/screenshot.PNG)
 
 ---
 
