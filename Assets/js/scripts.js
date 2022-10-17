@@ -12,7 +12,8 @@ var indexNumber
 var updatedTime
 var currentDay = moment()
 var currentTime = $('#currentTime').text(currentDay.format('h:mm:ss A'));
-$('#currentDay').text(currentDay.format('MMM Do, YYYY'));
+// SETTING THE DATE/DAY AT THE TOP OF THE PAGE
+$('#currentDay').text(currentDay.format('dddd, MMM Do, YYYY'));
 
 // CONSTANTLY UPDATING THE TIME AT THE TOP OF THE PAGE
 setInterval(function () {
@@ -22,11 +23,12 @@ setInterval(function () {
 
 // LOOP TO COLOR THE BACKGROUNDS OF THE EVENT BOX BASED ON TIME AND SET STORED TEXT (IF EXISTS)
 function init() {
+    // LOOP FOR GRABBING THE STORED INPUTS
     for (var i = 0; i < textInputs.length; i++) {
     var storedEvents = JSON.parse(localStorage.getItem(`timeblock${i}`))
     events.push(storedEvents);
-
     }
+    // LOOP FOR COLORING THE BACKGROUNDS
     for (var i = 0; i < textInputs.length; i++) {
         var timeCheck = moment().hour();
         var blockNumber = fullBlock[i].dataset.boxnumber;
